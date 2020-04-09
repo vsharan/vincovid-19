@@ -16,7 +16,7 @@ export class TasksService {
     private readonly covidService: CovidService) { }
 
   //EVERY_DAY_AT_6AM
-  @Cron(CronExpression.EVERY_45_SECONDS)
+  @Cron(CronExpression.EVERY_DAY_AT_6AM)
   async handleCron() {
     this.logger.debug('Called every day at 6 AM');
     //Fetch subscribed users from DB and send email
