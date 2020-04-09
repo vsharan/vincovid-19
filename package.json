@@ -20,9 +20,15 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs-modules/mailer": "^1.4.2",
     "@nestjs/common": "^6.10.14",
+    "@nestjs/config": "^0.4.0",
     "@nestjs/core": "^6.10.14",
+    "@nestjs/mongoose": "^6.4.0",
     "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/schedule": "^0.3.0",
+    "axios": "^0.19.2",
+    "mongoose": "^5.9.7",
     "nodemailer": "^6.4.6",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
