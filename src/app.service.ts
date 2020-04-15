@@ -17,6 +17,10 @@ export class AppService {
     //Keep the subscriber into DB to notify covid-19 updates every morning.
     let email = createSubscribeDto.email;
     email = email.trim().toLowerCase();
+    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!re.test(email)) {
+      return { message: "Please provide valid email" };
+    }
     const subscriptionData = await this.subscriptionModel.findOne({ email }).exec();
     if (subscriptionData) {
       return { message: 'User already subscribed' };
